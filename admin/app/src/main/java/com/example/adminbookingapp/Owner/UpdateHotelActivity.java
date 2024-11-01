@@ -19,6 +19,7 @@ import com.example.adminbookingapp.Model.Khachsan;
 import com.example.adminbookingapp.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
@@ -38,6 +39,7 @@ public class UpdateHotelActivity extends AppCompatActivity {
     private Uri mImageUri;
     private DatabaseReference reference;
     private FirebaseDatabase database;
+    FirebaseAuth auth;
     private ArrayList<Uri> ImageList = new ArrayList<Uri>();
 
     @Override
@@ -195,7 +197,7 @@ public class UpdateHotelActivity extends AppCompatActivity {
 
         reference = FirebaseDatabase.getInstance().getReference("Hotel");
         StorageReference ImageFolder = FirebaseStorage.getInstance().getReference().child("Khachsan_Images");
-        Khachsan ks = new Khachsan(hinh, strtenks, strdiachi, strgia, hinh2, hinh3, hinh4, strdiachict, strmota, strphongdon, strsdtks,trangthai );
+        Khachsan ks = new Khachsan(hinh, strtenks, strdiachi, strgia, hinh2, hinh3, hinh4, strdiachict, strmota, strphongdon, strsdtks,trangthai , auth.getUid() );
         reference.child(strtenks).setValue(ks);
         if (ImageList.size() != 0) {
             for (int i = 0; i < 4; i++) {

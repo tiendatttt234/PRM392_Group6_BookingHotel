@@ -16,7 +16,7 @@
         <ImageView
             android:id="@+id/img1"
             android:layout_width="100dp"
-            android:layout_height="150dp"
+            android:layout_height="130dp"
             android:layout_centerVertical="true"
             android:adjustViewBounds="true"
             android:scaleType="fitXY"

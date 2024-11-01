@@ -145,7 +145,7 @@ public class PaymentActivity extends AppCompatActivity {
                         for (DataSnapshot child : snapshot.getChildren()) {
                             Khachsan ks1 = child.getValue(Khachsan.class);
                             if (child.getKey().equals(strtenks)) {
-                                updateKs(ks1.getTenks(), ks1.getDiachi(), ks1.getDiachiCT(), ks1.getGia(), ks1.getMota(), ks1.getHinh(), ks1.getHinh2(), ks1.getHinh3(), ks1.getHinh4(), ks1.getSlphongdon(), ks1.getSdtks());
+                                updateKs(ks1.getTenks(), ks1.getDiachi(), ks1.getDiachiCT(), ks1.getGia(), ks1.getMota(), ks1.getHinh(), ks1.getHinh2(), ks1.getHinh3(), ks1.getHinh4(), ks1.getSlphongdon(), ks1.getSdtks(), ks1.getOwnerId());
                                 break;
                             }
                         }
@@ -185,30 +185,38 @@ public class PaymentActivity extends AppCompatActivity {
         });
     }
 
-    private void updateKs(String tenks, String diachi, String diachiCT, String gia, String mota, String hinh, String hinh2, String hinh3, String hinh4, String slphongdon, String sdtks) {
+    private void updateKs(String tenks, String diachi, String diachiCT, String gia, String mota,
+                          String hinh, String hinh2, String hinh3, String hinh4, String slphongdon, String sdtks, String ownerId) {
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         String strtenks = txttenks.getText().toString().trim();
         String ngayden = edt_chonngayden.getText().toString();
         String ngaydi = edt_chonngaydi.getText().toString();
-        String email = user.getUid();
+        String uid = user.getUid();
         String emailkh = user.getEmail();
         String tongtien = txttongtien.getText().toString();
         String tenkh = text1.getText().toString();
         String sdt = text2.getText().toString();
 
         DatabaseReference myref = database.getReference("phongdadat");
-        Map<String, Object> map = new HashMap<>();
-        map.put("ngayden", ngayden);
-        map.put("ngaydi", ngaydi);
-        map.put("tongtien", tongtien);
-        map.put("tenkh", tenkh);
-        map.put("tenkhachhang", emailkh);
-        map.put("sdtkh", sdt);
-        map.put("status", false);
-
-        myref.child(email).child(strtenks).updateChildren(map);
+//        Map<String, Object> map = new HashMap<>();
+//        map.put("ngayden", ngayden);
+//        map.put("ngaydi", ngaydi);
+//        map.put("tongtien", tongtien);
+//        map.put("tenkh", tenkh);
+//        map.put("tenkhachhang", emailkh);
+//        map.put("sdtkh", sdt);
+//        map.put("status", false);
+//
+//        myref.child(uid).child(strtenks).updateChildren(map);
 
         HashMap ks = new HashMap();
+        ks.put("ngayden", ngayden);
+        ks.put("ngaydi", ngaydi);
+        ks.put("tongtien", tongtien);
+        ks.put("tenkh", tenkh);
+        ks.put("tenkhachhang", emailkh);
+        ks.put("sdtkh", sdt);
+        ks.put("status", false);
         ks.put("tenks", tenks);
         ks.put("diachi", diachi);
         ks.put("gia", gia);
@@ -220,9 +228,10 @@ public class PaymentActivity extends AppCompatActivity {
         ks.put("hinh4", hinh4);
         ks.put("slphongdon", slphongdon);
         ks.put("Sdtks", sdtks);
+        ks.put("ownerId",ownerId);
 
         reference = FirebaseDatabase.getInstance().getReference("phongdadat");
-        reference.child(email).child(strtenks).updateChildren(ks).addOnCompleteListener(new OnCompleteListener() {
+        reference.child(uid).child(strtenks).updateChildren(ks).addOnCompleteListener(new OnCompleteListener() {
             @Override
             public void onComplete(@NonNull Task task) {
                 Toast.makeText(PaymentActivity.this, "Đặt phòng thành công!", Toast.LENGTH_LONG).show();

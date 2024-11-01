@@ -216,7 +216,7 @@ public class AddHotelActivity extends AppCompatActivity {
                     tenks.requestFocus();
                     return;
                 } else {
-                    Khachsan ks = new Khachsan("", strtenks, strdiachi, strgia, "", "", "", strdiachict, strmota, strphongdon, strsdtks, false);
+                    Khachsan ks = new Khachsan("", strtenks, strdiachi, strgia, "", "", "", strdiachict, strmota, strphongdon, strsdtks, false, auth.getUid());
                     for (int i = 0; i < 4; i++) {
 
                         Uri uri = ImageList.get(i);

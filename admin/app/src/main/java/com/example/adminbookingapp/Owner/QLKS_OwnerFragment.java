@@ -32,7 +32,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class QLKS_OwnerFragment extends Fragment implements SwipeRefreshLayout.OnRefreshListener {
-    TextView idxinchao, empty;
+    TextView idxinchao;
     Button btn_addhotel;
     DatabaseReference referenceip;
     RoomOwnerAdapter roomOwnerAdapter;
@@ -76,11 +76,11 @@ public class QLKS_OwnerFragment extends Fragment implements SwipeRefreshLayout.O
             public void onChanged() {
                 if (roomOwnerAdapter != null && view != null) {
                     if (roomOwnerAdapter.getItemCount() == 0) {
-                        empty.setVisibility(View.VISIBLE);
+//                        empty.setVisibility(View.VISIBLE);
                         btn_addhotel.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                     } else {
-                        empty.setVisibility(View.GONE);
+//                        empty.setVisibility(View.GONE);
                         btn_addhotel.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.VISIBLE);
                     }
@@ -95,7 +95,7 @@ public class QLKS_OwnerFragment extends Fragment implements SwipeRefreshLayout.O
 
     private void initUI(View view) {
         idxinchao = view.findViewById(R.id.xinchao_id);
-        empty = view.findViewById(R.id.text1);
+//        empty = view.findViewById(R.id.text1);
         btn_addhotel = view.findViewById(R.id.btnthemks);
         btn_addhotel.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -112,9 +112,9 @@ public class QLKS_OwnerFragment extends Fragment implements SwipeRefreshLayout.O
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 list.clear();
                 for (DataSnapshot child : snapshot.getChildren()) {
-                    Khachsan diaDiem = child.getValue(Khachsan.class);
-                    if (diaDiem.getTenks().equals(ten)) {
-                        list.add(diaDiem);
+                    Khachsan ks = child.getValue(Khachsan.class);
+                    if (ks.getOwnerId().equals(auth.getUid())) {
+                        list.add(ks);
                     }
                 }
                 roomOwnerAdapter.notifyDataSetChanged();

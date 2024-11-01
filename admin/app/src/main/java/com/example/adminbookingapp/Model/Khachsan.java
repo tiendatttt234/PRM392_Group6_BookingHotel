@@ -15,6 +15,7 @@ public class Khachsan implements Serializable {
     String mota;
     String Sdtks;
     Boolean trangthai;
+    String ownerId;
 
     public Khachsan() {
     }
@@ -32,6 +33,30 @@ public class Khachsan implements Serializable {
         this.slphongdon = slphongdon;
         this.Sdtks = Sdtks;
         this.trangthai = trangthai;
+    }
+
+    public Khachsan(String hinh, String tenks, String diachi, String gia, String hinh2, String hinh3, String slphongdon, String hinh4, String diachiCT, String mota, String sdtks, Boolean trangthai, String ownerId) {
+        this.hinh = hinh;
+        this.tenks = tenks;
+        this.diachi = diachi;
+        this.gia = gia;
+        this.hinh2 = hinh2;
+        this.hinh3 = hinh3;
+        this.slphongdon = slphongdon;
+        this.hinh4 = hinh4;
+        this.diachiCT = diachiCT;
+        this.mota = mota;
+        Sdtks = sdtks;
+        this.trangthai = trangthai;
+        this.ownerId = ownerId;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
 
     public Boolean getTrangthai() {
