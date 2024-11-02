@@ -5,11 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="36e7169b-046f-47c6-8469-be829fd8749e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/PRM392_Group6_BookingHotel.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/.idea/other.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/user/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/user/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/user/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,9 +29,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2oCqgeUKWae1K6oPeVC2OputidU" />
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -42,10 +49,10 @@
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "dat",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "F:/PRM392_Group6_BookingHotel"
+    "last_opened_file_path": "F:/PRM392_Group6_BookingHotel/user"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
