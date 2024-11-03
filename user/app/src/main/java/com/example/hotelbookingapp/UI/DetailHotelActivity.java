@@ -238,8 +238,8 @@ public class DetailHotelActivity extends AppCompatActivity implements View.OnCli
         menuItem = menu.findItem(R.id.menu_favorite);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
-        String tenDiaDiem = txttenks.getText().toString();
-        reference.child(auth.getUid()).child("Favorites").child(tenDiaDiem)
+        String tenKS = txttenks.getText().toString();
+        reference.child(auth.getUid()).child("Favorites").child(tenKS)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

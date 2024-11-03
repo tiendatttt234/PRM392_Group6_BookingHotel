@@ -216,7 +216,7 @@ public class AddHotelActivity extends AppCompatActivity {
                     tenks.requestFocus();
                     return;
                 } else {
-                    Khachsan ks = new Khachsan("", strtenks, strdiachi, strgia, "", "", "", strdiachict, strmota, strphongdon, strsdtks, false, auth.getUid());
+                    Khachsan ks = new Khachsan("", strtenks, strdiachi, strgia, "", "", "", strdiachict, strmota, strphongdon, strsdtks, true, auth.getUid());
                     for (int i = 0; i < 4; i++) {
 
                         Uri uri = ImageList.get(i);
@@ -256,7 +256,7 @@ public class AddHotelActivity extends AppCompatActivity {
                         });
                     }
                     reference.child(strtenks).setValue(ks);
-                    showToast("Đăng ký khách sạn của bạn thành công! Hãy đợi duyệt!");
+                    showToast("Thêm khách sạn của bạn thành công");
                     finish();
                 }
             }

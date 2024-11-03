@@ -19,6 +19,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.hotelbookingapp.Model.Khachsan;
 import com.example.hotelbookingapp.Model.User;
+import com.example.hotelbookingapp.Notification.NotificationService;
 import com.example.hotelbookingapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
@@ -232,8 +233,10 @@ public class PaymentActivity extends AppCompatActivity {
 
         reference = FirebaseDatabase.getInstance().getReference("phongdadat");
         reference.child(uid).child(strtenks).updateChildren(ks).addOnCompleteListener(new OnCompleteListener() {
+
             @Override
             public void onComplete(@NonNull Task task) {
+                NotificationService.sendNotification(ownerId);
                 Toast.makeText(PaymentActivity.this, "Đặt phòng thành công!", Toast.LENGTH_LONG).show();
             }
         }).addOnFailureListener(new OnFailureListener() {
