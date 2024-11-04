@@ -21,6 +21,7 @@ public class Booked implements Serializable {
     String sdtkh;
     String tenkh;
     Boolean status;
+    String ownerId;
 
     public Booked(String hinh, String tenks, String diachi, String gia, String hinh2, String hinh3, String hinh4, String DiachiCT, String mota, String ngayden, String ngaydi, String tongtien, String slphongdon, String Sdtks, String tenkhachhang, String sdtkh, String tenkh, Boolean status) {
         this.hinh = hinh;
@@ -45,6 +46,14 @@ public class Booked implements Serializable {
 
     public Booked() {
         // Default constructor required for calls to DataSnapshot.getValue(User.class)
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
 
     public Boolean getStatus() {

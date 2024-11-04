@@ -38,6 +38,7 @@ public class QLDonHangFragment extends Fragment {
     String ten = "";
     private String userID;
     private FirebaseUser user;
+    FirebaseAuth auth;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -58,7 +59,7 @@ public class QLDonHangFragment extends Fragment {
         list = new ArrayList<>();
         getListBook();
 
-
+        auth = FirebaseAuth.getInstance();
         //phan cach giua cac item
         DividerItemDecoration dividerItemDecoration = new DividerItemDecoration(getContext(), DividerItemDecoration.VERTICAL);
         recyclerView.addItemDecoration(dividerItemDecoration);
@@ -73,11 +74,11 @@ public class QLDonHangFragment extends Fragment {
             public void onChanged() {
                 if (bookAdapter != null && view != null) {
                     if (bookAdapter.getItemCount() == 0) {
-                        empty.setVisibility(View.VISIBLE);
+//                        empty.setVisibility(View.VISIBLE);
                         empty2.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.GONE);
                     } else {
-                        empty.setVisibility(View.GONE);
+//                        empty.setVisibility(View.GONE);
                         empty2.setVisibility(View.VISIBLE);
                         recyclerView.setVisibility(View.VISIBLE);
                     }
@@ -105,7 +106,7 @@ public class QLDonHangFragment extends Fragment {
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
                             for (DataSnapshot child : snapshot.getChildren()) {
                                 Booked value = child.getValue(Booked.class);
-                                if (value.getTenks().equals(ten)) {
+                                if (value.getOwnerId().equals(auth.getUid())) {
                                     list.add(value);
                                 }
                             }

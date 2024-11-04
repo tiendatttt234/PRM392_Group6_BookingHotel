@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.adminbookingapp.Admin.AdminMainScreem;
 import com.example.adminbookingapp.Model.Owner;
+import com.example.adminbookingapp.Notification.NotificationService;
 import com.example.adminbookingapp.Owner.OwnewMainScreem;
 import com.example.adminbookingapp.R;
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -126,6 +127,7 @@ public class SignIn extends AppCompatActivity implements View.OnClickListener {
                 }
                 if (exist == true) {
                     startActivity(new Intent(SignIn.this, OwnewMainScreem.class));
+                    NotificationService.saveFCMToken(mAuth.getUid());
                     finish();
                 } else {
                     Toast.makeText(SignIn.this, "Đăng nhập thất bại! Hãy kiểm tra lại thông tin đăng nhập!", Toast.LENGTH_LONG).show();

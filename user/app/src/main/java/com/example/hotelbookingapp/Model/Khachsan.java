@@ -16,9 +16,12 @@ public class Khachsan implements Serializable {
     String mota;
     String Sdtks;
     boolean trangthai;
+    String ownerId;
 
     public Khachsan() {
     }
+
+
 
     public Khachsan(String hinh, String tenks, String diachi, String gia, String hinh2, String hinh3, String hinh4, String diachiCT, String mota, String slphongdon, String Sdtks, boolean trangthai, String gia2) {
         this.hinh = hinh;
@@ -34,6 +37,23 @@ public class Khachsan implements Serializable {
         this.Sdtks = Sdtks;
         this.trangthai = trangthai;
         this.gia2 = gia2;
+    }
+
+    public Khachsan(String hinh, String tenks, String diachi, String gia, String gia2, String hinh2, String hinh3, String slphongdon, String hinh4, String diachiCT, String mota, String sdtks, boolean trangthai, String ownerId) {
+        this.hinh = hinh;
+        this.tenks = tenks;
+        this.diachi = diachi;
+        this.gia = gia;
+        this.gia2 = gia2;
+        this.hinh2 = hinh2;
+        this.hinh3 = hinh3;
+        this.slphongdon = slphongdon;
+        this.hinh4 = hinh4;
+        this.diachiCT = diachiCT;
+        this.mota = mota;
+        Sdtks = sdtks;
+        this.trangthai = trangthai;
+        this.ownerId = ownerId;
     }
 
     public String getGia2() {
@@ -138,5 +158,13 @@ public class Khachsan implements Serializable {
 
     public void setMota(String mota) {
         this.mota = mota;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
     }
 }

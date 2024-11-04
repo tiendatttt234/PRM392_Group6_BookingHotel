@@ -175,10 +175,10 @@ public class DetailHotelActivity extends AppCompatActivity implements View.OnCli
         String sdt = khachsan.getSdtks();
         Boolean trangthai = khachsan.isTrangthai();
 
-        Khachsan diaDiem1 = new Khachsan(url1, tenDiaDiem, dc, gia, url2, url3, url4, diaChiCT, moTa, slp, sdt, trangthai, gia2);
+        Khachsan ks1 = new Khachsan(url1, tenDiaDiem, dc, gia, url2, url3, url4, diaChiCT, moTa, slp, sdt, trangthai, gia2);
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
         reference.child(auth.getUid()).child("Favorites").child(tenDiaDiem)
-                .setValue(diaDiem1)
+                .setValue(ks1)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
@@ -238,8 +238,8 @@ public class DetailHotelActivity extends AppCompatActivity implements View.OnCli
         menuItem = menu.findItem(R.id.menu_favorite);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("User");
-        String tenDiaDiem = txttenks.getText().toString();
-        reference.child(auth.getUid()).child("Favorites").child(tenDiaDiem)
+        String tenKS = txttenks.getText().toString();
+        reference.child(auth.getUid()).child("Favorites").child(tenKS)
                 .addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
